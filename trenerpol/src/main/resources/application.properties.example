@@ -1,0 +1,35 @@
+# default connection pool
+spring.datasource.hikari.connectionTimeout=20000
+spring.datasource.hikari.maximumPoolSize=5
+spring.jpa.generate-ddl=false
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://trenerpol-instance.cwtvc1omxayq.eu-west-2.rds.amazonaws.com:3721/trenerpol
+spring.datasource.jdbc-url=${spring.datasource.url}
+spring.datasource.username=todo
+spring.datasource.password=todo
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.security.user.name=admin
+spring.security.user.password=todo
+server.error.include-message=always
+server.error.include-binding-errors=always
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+logging.file.path=#write to the current dir
+logging.file.name=trenerpol.log
+logging.logback.rollingpolicy.max-file-size=800MB
+logging.logback.rollingpolicy.max-history=30
+logging.logback.rollingpolicy.file-name-pattern=${logging.file.name}-%d{yyyy-MM-dd}.%i.log.gz
+auth.jwt.issuer=TrenerPol App
+auth.jwt.audience=TrenerPol Frontend App
+auth.jwt.ttl-in-seconds=21600
+auth.jwt.secret=48PjsfYhCFeYZcIE0iz0EHjfXHidKvja13mmKg==nRHeA2Bb+i5y6pdqmmIyldY9
+logging.level.root=INFO
+spring.main.banner-mode=off
+log4j.logger.com.amazonaws.request=DEBUG
+log4j.logger.com.amazonaws=DEBUG
+mail.sender.password=todo
+mail.sender.email=todo

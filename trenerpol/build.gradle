@@ -1,0 +1,54 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.pp'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.postgresql:postgresql'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.3'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.4'
+    implementation 'dev.samstevens.totp:totp-spring-boot-starter:1.7.1'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'org.jboss.aerogear:aerogear-otp-java:1.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:2.6.5'
+    implementation 'com.fasterxml.uuid:java-uuid-generator:4.0.1'
+    implementation 'org.springframework:spring-context-support:5.3.17'
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+    compileOnly 'io.jsonwebtoken:jjwt-api:0.11.2'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+    implementation 'com.vladmihalcea:hibernate-types-52:2.16.3'
+    implementation 'org.apache.poi:poi:5.2.2'
+    compileOnly group: 'com.monitorjbl', name: 'json-view', version: '0.15'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
